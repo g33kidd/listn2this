@@ -25,6 +25,7 @@ defmodule Listen.Track do
     |> unique_constraint(:link)
     |> validate_length(:name, min: 3)
     |> update_provider()
+    |> validate_format(:provider, ~r/^(spotify|soundcloud|youtube)$/)
   end
 
   def update_provider(changeset) do

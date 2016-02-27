@@ -6,7 +6,7 @@
         <%= text_input :track, :name, [placeholder: "Track Name and Artist"] %>
       </div>
       <div class="link">
-        <%= url_input :track, :link, [placeholder: "Link to track"] %>
+        <%= url_input :track, :link, [placeholder: "Link to track (spotify, soundcloud or youtube)"] %>
       </div>
       <div class="share">
         <%= submit "Share This" %>
