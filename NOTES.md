@@ -12,12 +12,15 @@
 
 ## TODO!
 
+- page to view your own posts
+- page for profiles or something
+- 
 - genres and stuff
 - get the track title from the link with JS or something.
 - consider adding tokens to the session instead of just the plain user id. Hint: `Phoenix.Token.sign/3` and `Phoenix.Token.verify/3`
 - add `image_url` field to user
 - color links and various style fixes.
-- javascript powered awesome flash messages 
+- javascript powered awesome flash messages
 - this.
 
 

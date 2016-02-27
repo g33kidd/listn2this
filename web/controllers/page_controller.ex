@@ -4,6 +4,7 @@ defmodule Listen.PageController do
 
   def index(conn, _params) do
     query = from t in Track,
+      limit: 50,
       order_by: [desc: :inserted_at],
       preload: [:user]
 

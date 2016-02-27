@@ -21,7 +21,10 @@
           <a href="/">LISTN2THIS</a>
         </div>
         <%= if logged_in?(@conn) do %>
-        <nav><a href="/logout">Logout</a></nav>
+        <nav>
+          <a href="<%= user_path(@conn, :me) %>">My Profile</a>
+          <a href="/logout">Logout</a>
+        </nav>
         <% end %>
       </div>
     </header>
