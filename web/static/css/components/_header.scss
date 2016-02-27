@@ -1,0 +1,25 @@
+header {
+  background: $header-bg;
+  height: 60px;
+  padding: 20px 20px;
+
+  a {
+    color: #FFF;
+    transition: color 100ms ease-in-out;
+    &:hover {
+      color: #EEE;
+    }
+  }
+
+  .site-name {
+    @include span-columns(6);
+  }
+
+  nav {
+    @include span-columns(6);
+    a {
+      display: inline-block;
+      float: right;
+    }
+  }
+}

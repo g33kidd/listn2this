@@ -1,0 +1,53 @@
+@mixin provider($background, $textcolor) {
+  display: inline-block;
+  color: $textcolor;
+  font-size: 20px;
+  width: 45px;
+  height: 40px;
+  background: $background;
+  transition: all 100ms ease-in-out;
+
+  i {
+    display: block;
+    padding: 11px;
+    text-align: center;
+  }
+
+  &:hover {
+    background: darken($background, 10%);
+  }
+}
+
+.tracks {
+  @include span-columns(12);
+
+  .track {
+    @include row();
+    margin-bottom: 10px;
+
+    .info {
+      background: #FFFFFF;
+      padding: 10px 15px;
+      line-height: 1;
+
+      .provider {
+        &.soundcloud {
+          @include provider($soundcloud, #FFF);
+        }
+        &.youtube {
+          @include provider($youtube, #FFF);
+        }
+        &.spotify {
+          @include provider($spotify, #FFF);
+        }
+      }
+
+      .name {
+        display: inline-block;
+        font-size: 20px;
+        padding: 0 10px;
+        color: #4A4A4A;
+      }
+    }
+  }
+}
