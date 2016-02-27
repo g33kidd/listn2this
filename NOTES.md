@@ -10,16 +10,13 @@
 
 - compact sharing box
 - figure out how to play tracks and control or show different iFrames
-- moderator accounts, to delete things that either don't belong or other mod stuff
+- moderator accounts, to delete things that either don't belong or other mod stuff | Roles
 - genres and stuff
 - get the track title from the link with JS or something.
 - consider adding tokens to the session instead of just the plain user id. Hint: `Phoenix.Token.sign/3` and `Phoenix.Token.verify/3`
 - save a track
 - favorite a track
 - share a track
+- show better errors
 - color links and various style fixes.
-- this.
-
-## Random Thoughts
-
-- Tweet when someone shares a track?
+- tweet when someone shares a track.
