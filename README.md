@@ -1,3 +1,13 @@
+# Info
+
+This project is built to be ran on Heroku or Dokku environments. There are 2 environment variables that need to be set before running on your local machine.
+
+`TWITTER_CONSUMER_KEY` and `TWITTER_CONSUMER_SECRET` for authentication with twitter.
+
+For production:
+
+You need to have `DATABASE_URL` set, or just change the Repo configuration in `config/prod.exs` and `SECRET_KEY_BASE`.
+
 # Listen
 
 To start your Phoenix app:
