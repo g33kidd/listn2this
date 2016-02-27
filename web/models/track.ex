@@ -37,13 +37,11 @@ defmodule Listen.Track do
     changeset |> put_change(:provider, provider)
   end
 
-  # TODO: there's a better way to do this... regex
-  def get_site_name("play." <> site), do: strip_all(site)
-  def get_site_name("www." <> site), do: strip_all(site)
-  def get_site_name(site), do: strip_all(site)
-
-  def strip_all(site_name) do
-    site_name |> String.split(".") |> List.first()
+  def get_site_name(site) do
+    site
+    |> String.replace(~r/^[a-z]+\./, "")
+    |> String.split(".")
+    |> List.first()
   end
 
 end

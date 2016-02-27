@@ -19,7 +19,7 @@
   <div class="tracks">
   <div class="header">Recently Posted</div>
   <%= for track <- @tracks do %>
-    <div class="track">
+    <div class="track" data-url="<%= track.link %>">
       <div class="info">
         <div class="provider <%= track.provider %>">
           <%= if track.provider == "youtube" do %>

@@ -29,6 +29,14 @@
       </div>
     </header>
 
+    <%= if get_flash(@conn, :info) do %>
+      <div class="alert info"><div><%= get_flash(@conn, :info) %></div></div>
+    <%= end %>
+
+    <%= if get_flash(@conn, :error) do %>
+      <div class="alert danger"><div><%= get_flash(@conn, :error) %></div></div>
+    <% end %>
+
     <%= if !logged_in?(@conn) do %>
     <section class="hero signup">
       <div class="container">
@@ -41,14 +49,6 @@
         </div>
       </div>
     </section>
-    <% end %>
-
-    <%= if get_flash(@conn, :info) do %>
-      <div class="alert info"><div><%= get_flash(@conn, :info) %></div></div>
-    <%= end %>
-
-    <%= if get_flash(@conn, :error) do %>
-      <div class="alert danger"><div><%= get_flash(@conn, :error) %></div></div>
     <% end %>
 
     <main role="main">

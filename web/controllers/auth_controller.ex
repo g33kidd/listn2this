@@ -34,6 +34,7 @@ defmodule Listen.AuthController do
   def logout(conn, params) do
     conn
     |> delete_session(:current_user)
+    |> put_flash(:info, "You have signed out.")
     |> redirect(to: "/")
     |> halt()
   end

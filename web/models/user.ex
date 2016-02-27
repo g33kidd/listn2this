@@ -4,13 +4,14 @@ defmodule Listen.User do
 
   schema "users" do
     field :username, :string
+    field :image_url, :string
     has_many :tracks, Listen.Track
 
     timestamps
   end
 
   @required_fields ~w(username)
-  @optional_fields ~w()
+  @optional_fields ~w(image_url)
 
   @doc """
   Creates a changeset based on the `model` and `params`.
