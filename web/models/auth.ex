@@ -29,7 +29,7 @@ defmodule Listen.Auth do
   """
   def basic_info(auth) do
     %{username: auth.info.nickname,
-      image: auth.info.image}
+      image_url: auth.info.image}
   end
 
   @doc """
