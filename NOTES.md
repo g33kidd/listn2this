@@ -8,6 +8,8 @@
 
 ## TODO!
 
+- compact sharing box
+- figure out how to play tracks and control or show different iFrames
 - moderator accounts, to delete things that either don't belong or other mod stuff
 - genres and stuff
 - get the track title from the link with JS or something.
@@ -15,7 +17,6 @@
 - save a track
 - favorite a track
 - share a track
-- only allow links from trusted sources (soundcloud, youtube, spotify, etc..)
 - color links and various style fixes.
 - this.
 
