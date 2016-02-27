@@ -23,6 +23,7 @@ defmodule Listen.Track do
     model
     |> cast(params, @required_fields, @optional_fields)
     |> unique_constraint(:link)
+    |> validate_length(:name, min: 3)
     |> update_provider()
   end
 

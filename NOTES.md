@@ -14,10 +14,10 @@
 
 - genres and stuff
 - get the track title from the link with JS or something.
-- add unique constraints to the stuffs
 - consider adding tokens to the session instead of just the plain user id. Hint: `Phoenix.Token.sign/3` and `Phoenix.Token.verify/3`
 - add `image_url` field to user
-- add `provider` field to track, to determine what image to show on the front-end.
+- color links and various style fixes.
+- javascript powered awesome flash messages 
 - this.
 
 

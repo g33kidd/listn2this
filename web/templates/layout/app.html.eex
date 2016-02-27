@@ -18,9 +18,11 @@
     <header>
       <div class="container">
         <div class="site-name">
-          <a href="/">LISTN2</a>
+          <a href="/">LISTN2THIS</a>
         </div>
+        <%= if logged_in?(@conn) do %>
         <nav><a href="/logout">Logout</a></nav>
+        <% end %>
       </div>
     </header>
 
@@ -29,7 +31,7 @@
       <div class="container">
         <div class="content">
           <h1>Discover New Music</h1>
-          <p>Everyone loves music. Don’t you? This is a place for anyone and everyone to share new and interesting music. Inspired by my favorite reddit community /r/listentothis.</p>
+          <p>Everyone loves music. Don’t you? This is a place for anyone and everyone to share new and interesting music. Inspired by my favorite reddit community <a href="http://reddit.com/r/listentothis" target="_blank">/r/listentothis</a>.</p>
         </div>
         <div class="signup">
           <a href="/auth/twitter" class="twitter"><i class="fa fa-twitter"></i> <span>Login with Twitter</span></a>
@@ -38,13 +40,16 @@
     </section>
     <% end %>
 
-    <div class="alert info"><%= get_flash(@conn, :info) %></div>
-    <div class="alert danger"><%= get_flash(@conn, :error) %></div>
+    <%= if get_flash(@conn, :info) do %>
+      <div class="alert info"><div><%= get_flash(@conn, :info) %></div></div>
+    <%= end %>
+
+    <%= if get_flash(@conn, :error) do %>
+      <div class="alert danger"><div><%= get_flash(@conn, :error) %></div></div>
+    <% end %>
 
     <main role="main">
-      <div class="container">
-        <%= render @view_module, @view_template, assigns %>
-      </div>
+      <%= render @view_module, @view_template, assigns %>
     </main>
 
     <script src="<%= static_path(@conn, "/js/app.js") %>"></script>

@@ -3,9 +3,9 @@
   color: $textcolor;
   font-size: 20px;
   width: 45px;
-  height: 40px;
+  height: 45px;
   background: $background;
-  transition: all 100ms ease-in-out;
+  transition: all 200ms ease-in-out;
 
   i {
     display: block;
@@ -15,11 +15,20 @@
 
   &:hover {
     background: darken($background, 10%);
+    border-radius: 100%;
   }
 }
 
 .tracks {
   @include span-columns(12);
+  padding: 20px 0;
+  .header {
+    font-size: 30px;
+    font-weight: 200;
+    color: #949494;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+  }
 
   .track {
     @include row();
@@ -47,6 +56,11 @@
         font-size: 20px;
         padding: 0 10px;
         color: #4A4A4A;
+        transition: color 150ms ease-in-out;
+
+        &:hover {
+          color: lighten(#4A4A4A, 20%);
+        }
       }
     }
   }

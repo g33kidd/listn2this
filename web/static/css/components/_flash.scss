@@ -1,4 +1,15 @@
 .alert {
   padding: 15px 0;
-  
+  cursor: pointer;
+
+  div { @include outer-container(960px); }
+
+  &.danger {
+    background: #CC5252;
+  }
+
+  &.info {
+    background: #5294CC;
+    color: #FFFFFF;
+  }
 }

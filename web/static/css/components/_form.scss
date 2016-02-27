@@ -1,0 +1,50 @@
+.share-form {
+  padding: 20px 0;
+  background: #E3E3E3;
+  .header {
+    color: #9E9E9E;
+    font-weight: 800;
+    text-transform: uppercase;
+    font-size: 20px;
+    margin-bottom: 15px;
+    line-height: 1;
+  }
+
+  input[type="text"], input[type="url"] {
+    display: block;
+    width: 100%;
+    padding: 10px 15px;
+    color: #C7C7C7;
+    border-radius: 3px;
+    border: 0px;
+  }
+
+  input[type="submit"] {
+    display: block;
+    width: 100%;
+    padding: 10px 5px;
+    text-align: center;
+    font-size: 16px;
+    background: #4F6E8D;
+    border: 0px;
+    color: #FFF;
+    border-radius: 3px;
+    transition: background 100ms ease-in-out;
+    &:hover {
+      background: lighten(#4F6E8D, 10%);
+    }
+  }
+
+  .name {
+    @include span-columns(5);
+  }
+
+  .link {
+    @include span-columns(5);
+  }
+
+  .share {
+    @include span-columns(2);
+  }
+
+}

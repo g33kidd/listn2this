@@ -1,30 +1,36 @@
-<%= form_tag(track_path(@conn, :create), method: "post") do %>
-  <div>
-    <label for="">Name</label>
-    <%= text_input :track, :name, [placeholder: "Track Name"] %>
-  </div>
-
-  <div>
-    <label for="">Link</label>
-    <%= url_input :track, :link, [placeholder: "Track Link"] %>
-  </div>
-
-  <%= submit "Share" %>
-<% end %>
-
-<div class="tracks">
-<%= for track <- @tracks do %>
-  <div class="track">
-    <div class="info">
-      <div class="provider <%= track.provider %>">
-        <%= if track.provider == "youtube" do %>
-          <i class="fa fa-youtube-play"></i>
-        <%= else %>
-          <i class="fa fa-<%= track.provider %>"></i>
-        <% end %>
+<%= if logged_in?(@conn) do %>
+  <%= form_tag(track_path(@conn, :create), method: "post", class: "share-form") do %>
+    <div class="container">
+      <h2 class="header">Share a Track</h2>
+      <div class="name">
+        <%= text_input :track, :name, [placeholder: "Track Name and Artist"] %>
       </div>
-      <a href="<%= track.link %>" class="name" target="_blank"><%= track.name %></a>
+      <div class="link">
+        <%= url_input :track, :link, [placeholder: "Link to track"] %>
+      </div>
+      <div class="share">
+        <%= submit "Share This" %>
+      </div>
     </div>
-  </div>
+  <% end %>
 <% end %>
+
+<div class="container">
+  <div class="tracks">
+  <div class="header">Recently Posted</div>
+  <%= for track <- @tracks do %>
+    <div class="track">
+      <div class="info">
+        <div class="provider <%= track.provider %>">
+          <%= if track.provider == "youtube" do %>
+            <i class="fa fa-youtube-play"></i>
+          <%= else %>
+            <i class="fa fa-<%= track.provider %>"></i>
+          <% end %>
+        </div>
+        <a href="<%= track.link %>" class="name" target="_blank"><%= track.name %></a>
+      </div>
+    </div>
+  <% end %>
+  </div>
 </div>
