@@ -30,8 +30,6 @@ defmodule Listen.Track do
   def update_provider(changeset) do
     provider = get_change(changeset, :link)
     |> URI.parse()
-    |> Map.from_struct()
-    |> Map.get(:host)
     |> get_site_name()
 
     changeset |> put_change(:provider, provider)
@@ -41,12 +39,10 @@ defmodule Listen.Track do
   # open.spotify.com
   # play.spotify.com
   def get_site_name(site) do
-    parts = String.split(site, ".")
-    if length(parts) == 2, do: List.first(parts)
-    if length(parts) == 3 do
-      parts
-      |> List.delete_at(0)
-      |> List.first()
+    parts = String.split(site.host, ".")
+    case length(parts) do
+      2 -> List.first(parts)
+      3 -> List.delete_at(parts, 0) |> List.first()
     end
   end
 
