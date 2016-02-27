@@ -18,12 +18,12 @@
     <header>
       <div class="container">
         <div class="site-name">
-          <a href="/">LISTN2THIS</a>
+          <a href="/">LISTN<span>2</span>THIS</a>
         </div>
         <%= if logged_in?(@conn) do %>
         <nav>
-          <a href="<%= user_path(@conn, :me) %>">My Profile</a>
           <a href="/logout">Logout</a>
+          <a href="<%= user_path(@conn, :me) %>">My Profile</a>
         </nav>
         <% end %>
       </div>

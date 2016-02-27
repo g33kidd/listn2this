@@ -29,6 +29,12 @@
           <% end %>
         </div>
         <a href="<%= track.link %>" class="name" target="_blank"><%= track.name %></a>
+        <div class="user">
+          <a href="<%= user_path(@conn, :show, track.user.username) %>">
+            <%= track.user.username %>
+          </a>
+          <img src="<%= track.user.image_url %>" alt="">
+        </div>
       </div>
     </div>
   <% end %>

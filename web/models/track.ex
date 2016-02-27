@@ -37,11 +37,17 @@ defmodule Listen.Track do
     changeset |> put_change(:provider, provider)
   end
 
+  # soundcloud.com
+  # open.spotify.com
+  # play.spotify.com
   def get_site_name(site) do
-    site
-    |> String.replace(~r/^[a-z]+\./, "")
-    |> String.split(".")
-    |> List.first()
+    parts = String.split(site, ".")
+    if length(parts) == 2, do: List.first(parts)
+    if length(parts) == 3 do
+      parts
+      |> List.delete_at(0)
+      |> List.first()
+    end
   end
 
 end

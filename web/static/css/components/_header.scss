@@ -1,25 +1,40 @@
 header {
   background: $header-bg;
   height: 60px;
-  padding: 20px 20px;
+  padding: 10px 20px;
 
   a {
     color: #FFF;
     transition: color 100ms ease-in-out;
     &:hover {
-      color: #EEE;
+      color: darken(#FFF, 10%);
     }
   }
 
   .site-name {
     @include span-columns(6);
+    font-size: 25px;
+    padding: 5px 0;
+    font-weight: 200;
+    span {
+      font-weight: 800;
+      padding: 0 0px;
+    }
+
+    &:hover {
+      a {
+        color: darken(#FFF, 40%);
+      }
+    }
   }
 
   nav {
     @include span-columns(6);
     a {
+      text-transform: uppercase;
       display: inline-block;
       float: right;
+      padding: 10px 10px;
     }
   }
 }
