@@ -7,54 +7,11 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>LISTN2</title>
-
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-    <link href='https://fonts.googleapis.com/css?family=Lato:400,300,700' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
+    <title>LISTN 2 THIS</title>
   </head>
 
   <body>
-    <header>
-      <div class="container">
-        <div class="site-name">
-          <a href="/">LISTN<span>2</span>THIS</a>
-        </div>
-        <%= if logged_in?(@conn) do %>
-        <nav>
-          <a href="/logout">Logout</a>
-          <a href="<%= user_path(@conn, :me) %>">My Profile</a>
-        </nav>
-        <% end %>
-      </div>
-    </header>
-
-    <%= if get_flash(@conn, :info) do %>
-      <div class="alert info"><div><%= get_flash(@conn, :info) %></div></div>
-    <%= end %>
-
-    <%= if get_flash(@conn, :error) do %>
-      <div class="alert danger"><div><%= get_flash(@conn, :error) %></div></div>
-    <% end %>
-
-    <%= if !logged_in?(@conn) do %>
-    <section class="hero signup">
-      <div class="container">
-        <div class="content">
-          <h1>Discover New Music</h1>
-          <p>Everyone loves music. Don’t you? This is a place for anyone and everyone to share new and interesting music. Inspired by my favorite reddit community <a href="http://reddit.com/r/listentothis" target="_blank">/r/listentothis</a>.</p>
-        </div>
-        <div class="signup">
-          <a href="/auth/twitter" class="twitter"><i class="fa fa-twitter"></i> <span>Login with Twitter</span></a>
-        </div>
-      </div>
-    </section>
-    <% end %>
-
-    <main role="main">
-      <%= render @view_module, @view_template, assigns %>
-    </main>
-
-    <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
+    <div id="root" />
+    <script src="<%= static_path(@conn, "/js/main.js") %>"></script>
   </body>
 </html>

@@ -4,6 +4,7 @@ const webpack = require('webpack');
 module.exports = {
   entry: "./client/main.js",
   devtool: 'inline-source-map',
+  mode: 'development',
   devServer: {
     contentBase: './priv/static/js',
     hot: true
