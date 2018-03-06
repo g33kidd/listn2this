@@ -1,8 +1,8 @@
-defmodule Listen.UserSocket do
+defmodule ListenWeb.UserSocket do
   use Phoenix.Socket
 
   ## Channels
-  # channel "rooms:*", Listen.RoomChannel
+  # channel "rooms:*", ListenWeb.RoomChannel
 
   ## Transports
   transport :websocket, Phoenix.Transports.WebSocket
@@ -30,7 +30,7 @@ defmodule Listen.UserSocket do
   # Would allow you to broadcast a "disconnect" event and terminate
   # all active sockets and channels for a given user:
   #
-  #     Listen.Endpoint.broadcast("users_socket:#{user.id}", "disconnect", %{})
+  #     ListenWeb.Endpoint.broadcast("users_socket:#{user.id}", "disconnect", %{})
   #
   # Returning `nil` makes this socket anonymous.
   def id(_socket), do: nil

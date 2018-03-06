@@ -1,8 +1,8 @@
-defmodule Listen.UserController do
-  use Listen.Web, :controller
-  alias Listen.{Repo, User}
+defmodule ListenWeb.UserController do
+  use ListenWeb, :controller
+  alias ListenWeb.{Repo, User}
 
-  plug Listen.Plugs.EnsureAuthenticated when action in [:me]
+  plug ListenWeb.Plugs.EnsureAuthenticated when action in [:me]
 
   def me(conn, _params) do
     user_id = get_session(conn, :current_user)

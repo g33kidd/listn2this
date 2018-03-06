@@ -1,11 +1,13 @@
-defmodule Listen.Track do
-  use Listen.Web, :model
+defmodule Listen.Music.Track do
+  use Ecto.Schema
+  import Ecto.Changeset
+  alias Listen.Accounts.User
 
   schema "tracks" do
     field :name, :string
     field :link, :string
     field :provider, :string
-    belongs_to :user, Listen.User
+    belongs_to :user, User
 
     timestamps
   end
@@ -29,22 +31,18 @@ defmodule Listen.Track do
   end
 
   def update_provider(changeset) do
-    provider = get_change(changeset, :link)
-    |> URI.parse()
-    |> get_site_name()
+    provider =
+      get_change(changeset, :link)
+      |> URI.parse()
+      |> split_parts()
+      |> length()
+      |> case do
+        2 -> List.first(parts)
+        3 -> List.delete_at(parts, 0) |> List.first()
+      end
 
-    changeset |> put_change(:provider, provider)
+    put_change(changeset, :provider, provider)
   end
 
-  # soundcloud.com
-  # open.spotify.com
-  # play.spotify.com
-  def get_site_name(site) do
-    parts = String.split(site.host, ".")
-    case length(parts) do
-      2 -> List.first(parts)
-      3 -> List.delete_at(parts, 0) |> List.first()
-    end
-  end
-
+  defp split_parts(%{host: host}), do: String.split(host, ".")
 end

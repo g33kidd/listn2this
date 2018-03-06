@@ -1,5 +1,5 @@
-defmodule Listen.Plugs.EnsureAuthenticated do
-  alias Listen.{Repo, User}
+defmodule ListenWeb.Plugs.EnsureAuthenticated do
+  alias ListenWeb.{Repo, User}
   import Plug.Conn
 
   def init(opts), do: opts

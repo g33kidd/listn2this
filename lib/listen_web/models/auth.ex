@@ -1,5 +1,5 @@
-defmodule Listen.Auth do
-  alias Listen.{Repo, User}
+defmodule ListenWeb.Auth do
+  alias ListenWeb.{Repo, User}
 
   @doc """
   Finds or creates a user based on the authentication information given back

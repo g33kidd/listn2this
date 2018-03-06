@@ -1,7 +1,7 @@
-defmodule Listen.Endpoint do
+defmodule ListenWeb.Endpoint do
   use Phoenix.Endpoint, otp_app: :listen
 
-  socket "/socket", Listen.UserSocket
+  socket "/socket", ListenWeb.UserSocket
 
   # Serve at "/" the static files from "priv/static" directory.
   #
@@ -35,5 +35,5 @@ defmodule Listen.Endpoint do
     key: "_listen_key",
     signing_salt: "B1GDx3YB"
 
-  plug Listen.Router
+  plug ListenWeb.Router
 end

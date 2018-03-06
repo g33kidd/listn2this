@@ -1,5 +1,5 @@
-defmodule Listen.ErrorView do
-  use Listen.Web, :view
+defmodule ListenWeb.ErrorView do
+  use ListenWeb, :view
 
   def render("404.html", _assigns) do
     "Page not found"

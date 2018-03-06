@@ -1,9 +1,9 @@
-defmodule Listen.TrackController do
-  use Listen.Web, :controller
-  alias Listen.{Repo, Track}
+defmodule ListenWeb.TrackController do
+  use ListenWeb, :controller
+  alias ListenWeb.{Repo, Track}
 
   plug :scrub_params, "track" when action in [:create]
-  plug Listen.Plugs.EnsureAuthenticated when action in [:create]
+  plug ListenWeb.Plugs.EnsureAuthenticated when action in [:create]
 
   def create(conn, %{"track" => track_params}) do
     user_id = get_session(conn, :current_user)

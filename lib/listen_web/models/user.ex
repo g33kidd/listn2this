@@ -1,11 +1,11 @@
-defmodule Listen.User do
-  use Listen.Web, :model
-  alias Listen.{Repo, User}
+defmodule ListenWeb.User do
+  use ListenWeb, :model
+  alias ListenWeb.{Repo, User}
 
   schema "users" do
     field :username, :string
     field :image_url, :string
-    has_many :tracks, Listen.Track
+    has_many :tracks, ListenWeb.Track
 
     timestamps
   end

@@ -1,4 +1,4 @@
-defmodule Listen.ErrorHelpers do
+defmodule ListenWeb.ErrorHelpers do
   @moduledoc """
   Conveniences for translating and building error messages.
   """
@@ -26,10 +26,10 @@ defmodule Listen.ErrorHelpers do
     #
     #     dngettext "errors", "1 file", "%{count} files", count
     #
-    Gettext.dngettext(Listen.Gettext, "errors", msg, msg, opts[:count], opts)
+    Gettext.dngettext(ListenWeb.Gettext, "errors", msg, msg, opts[:count], opts)
   end
 
   def translate_error(msg) do
-    Gettext.dgettext(Listen.Gettext, "errors", msg)
+    Gettext.dgettext(ListenWeb.Gettext, "errors", msg)
   end
 end

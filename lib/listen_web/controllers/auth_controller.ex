@@ -1,6 +1,6 @@
-defmodule Listen.AuthController do
-  use Listen.Web, :controller
-  alias Listen.Auth
+defmodule ListenWeb.AuthController do
+  use ListenWeb, :controller
+  alias ListenWeb.Auth
   plug Ueberauth
 
   def callback(%{assigns: %{ueberauth_auth: auth}} = conn, params) do

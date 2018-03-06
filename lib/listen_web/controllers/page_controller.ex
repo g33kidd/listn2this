@@ -1,6 +1,6 @@
-defmodule Listen.PageController do
-  use Listen.Web, :controller
-  alias Listen.{Repo, Track}
+defmodule ListenWeb.PageController do
+  use ListenWeb, :controller
+  alias ListenWeb.{Repo, Track}
 
   def index(conn, _params) do
     query = from t in Track,

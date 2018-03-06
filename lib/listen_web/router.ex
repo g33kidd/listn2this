@@ -1,5 +1,5 @@
-defmodule Listen.Router do
-  use Listen.Web, :router
+defmodule ListenWeb.Router do
+  use ListenWeb, :router
 
   pipeline :browser do
     plug :accepts, ["html"]
