@@ -9,7 +9,7 @@ defmodule ListenWeb.Router do
     plug :put_secure_browser_headers
   end
 
-  scope "/", Listen do
+  scope "/", ListenWeb do
     pipe_through :browser # Use the default browser stack
 
     get "/", PageController, :index

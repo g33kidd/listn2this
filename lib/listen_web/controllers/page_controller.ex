@@ -1,6 +1,10 @@
 defmodule ListenWeb.PageController do
   use ListenWeb, :controller
-  alias ListenWeb.{Repo, Track}
+
+  import Ecto.Query
+
+  alias Listen.Repo
+  alias Listen.Music.Track
 
   def index(conn, _params) do
     query = from t in Track,

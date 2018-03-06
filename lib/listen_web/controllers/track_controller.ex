@@ -1,6 +1,10 @@
 defmodule ListenWeb.TrackController do
   use ListenWeb, :controller
-  alias ListenWeb.{Repo, Track}
+
+  import Ecto.Query
+
+  alias Listen.Repo
+  alias Listen.Music.Track
 
   plug :scrub_params, "track" when action in [:create]
   plug ListenWeb.Plugs.EnsureAuthenticated when action in [:create]

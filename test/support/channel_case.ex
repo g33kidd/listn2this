@@ -27,7 +27,7 @@ defmodule Listen.ChannelCase do
 
 
       # The default endpoint for testing
-      @endpoint Listen.Endpoint
+      @endpoint ListenWeb.Endpoint
     end
   end
 

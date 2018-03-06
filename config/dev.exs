@@ -6,12 +6,14 @@ use Mix.Config
 # The watchers configuration can be used to run external
 # watchers to your application. For example, we use it
 # with brunch.io to recompile .js and .css sources.
-config :listen, Listen.Endpoint,
+config :listen, ListenWeb.Endpoint,
   http: [port: 4000],
   debug_errors: true,
   code_reloader: true,
   check_origin: false,
-  watchers: [node: ["node_modules/brunch/bin/brunch", "watch", "--stdin"]]
+  watchers: [
+    yarn: ["dev"]
+  ]
 
 # ## SSL Support
 #
@@ -31,7 +33,7 @@ config :listen, Listen.Endpoint,
 
 
 # Watch static and templates for browser reloading.
-config :listen, Listen.Endpoint,
+config :listen, ListenWeb.Endpoint,
   live_reload: [
     patterns: [
       ~r{priv/static/.*(js|css|png|jpeg|jpg|gif|svg)$},

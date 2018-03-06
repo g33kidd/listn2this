@@ -1,6 +1,7 @@
 defmodule Listen.Music.Track do
   use Ecto.Schema
   import Ecto.Changeset
+  import Ecto.Query
   alias Listen.Accounts.User
 
   schema "tracks" do
@@ -31,14 +32,17 @@ defmodule Listen.Music.Track do
   end
 
   def update_provider(changeset) do
-    provider =
+    parts =
       get_change(changeset, :link)
       |> URI.parse()
       |> split_parts()
+
+    provider =
+      parts
       |> length()
       |> case do
         2 -> List.first(parts)
-        3 -> List.delete_at(parts, 0) |> List.first()
+        3 -> List.first(List.delete_at(parts, 0))
       end
 
     put_change(changeset, :provider, provider)

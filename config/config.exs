@@ -9,7 +9,7 @@ config :listen,
   ecto_repos: [Listen.Repo]
 
 # Configures the endpoint
-config :listen, Listen.Endpoint,
+config :listen, ListenWeb.Endpoint,
   url: [host: "localhost"],
   root: Path.dirname(__DIR__),
   secret_key_base: "Nh9f8oUA++Us/1fQ1bS5XG8pCxI0H63C21UvnBgEvkT8qgaLVEZaen5ocoCYZcrI",

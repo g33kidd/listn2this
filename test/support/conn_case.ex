@@ -28,7 +28,7 @@ defmodule Listen.ConnCase do
       import Listen.Router.Helpers
 
       # The default endpoint for testing
-      @endpoint Listen.Endpoint
+      @endpoint ListenWeb.Endpoint
     end
   end
 

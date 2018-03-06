@@ -1,6 +1,10 @@
 defmodule ListenWeb.UserController do
   use ListenWeb, :controller
-  alias ListenWeb.{Repo, User}
+
+  import Ecto.Query
+
+  alias Listen.Repo
+  alias Listen.Accounts.User
 
   plug ListenWeb.Plugs.EnsureAuthenticated when action in [:me]
 

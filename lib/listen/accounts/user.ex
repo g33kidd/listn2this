@@ -1,11 +1,16 @@
-defmodule ListenWeb.User do
-  use ListenWeb, :model
-  alias ListenWeb.{Repo, User}
+defmodule Listen.Accounts.User do
+  use Ecto.Schema
+
+  import Ecto.Changeset
+  import Ecto.Query
+
+  alias Listen.Accounts.User
+  alias Listen.Music.Track
 
   schema "users" do
     field :username, :string
     field :image_url, :string
-    has_many :tracks, ListenWeb.Track
+    has_many :tracks, Track
 
     timestamps
   end
