@@ -20,6 +20,10 @@ defmodule ListenWeb.Router do
     get "/:username", UserController, :show
   end
 
+  scope "/api" do
+    forward "/graphql", Absinthe.Plug, schema: ListenWeb.Schema
+  end
+
   scope "/auth", Listen do
     pipe_through :browser
 

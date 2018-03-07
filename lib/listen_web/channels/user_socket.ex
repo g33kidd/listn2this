@@ -2,7 +2,7 @@ defmodule ListenWeb.UserSocket do
   use Phoenix.Socket
 
   ## Channels
-  # channel "rooms:*", ListenWeb.RoomChannel
+  channel "party:*", ListenWeb.PartyChannel
 
   ## Transports
   transport :websocket, Phoenix.Transports.WebSocket
