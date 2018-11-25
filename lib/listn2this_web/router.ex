@@ -13,14 +13,17 @@ defmodule ListnWeb.Router do
     plug :accepts, ["json"]
   end
 
+  forward "/api", Absinthe.Plug,
+    schema: ListnWeb.Schema,
+    pipeline: {ApolloTracing.Pipeline, :plug}
+
+  if Mix.env() == :dev do
+    forward "/gql", Absinthe.Plug.GraphiQL, schema: ListnWeb.Schema
+  end
+
   scope "/", ListnWeb do
     pipe_through :browser
 
-    get "/", PageController, :index
+    get "/*all", PageController, :index
   end
-
-  # Other scopes may use custom stacks.
-  # scope "/api", ListnWeb do
-  #   pipe_through :api
-  # end
 end
