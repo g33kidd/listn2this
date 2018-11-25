@@ -1,7 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 
-const publicPath = 'http://127.0.0.1:3000'
+const publicPath = `http://localhost:4001/`
 
 module.exports = {
 
@@ -10,7 +10,7 @@ module.exports = {
 
   entry: [
     'react-hot-loader/patch',
-    `webpack-dev-server/client?${publicPath}`,
+    `webpack-dev-server/client?${publicPath}__webpack_hmr`,
     'webpack/hot/only-dev-server',
     "./client/main.js"
   ],
@@ -20,19 +20,11 @@ module.exports = {
     filename: "[name].js"
   },
 
-  devServer: {
-    contentBase: path.resolve(__dirname, 'priv/static/js'),
-    hot: true,
-    port: 3000,
-    quiet: false,
-    inline: true,
-    historyApiFallback: true,
-    stats: { colors: true }
-  },
   plugins: [
     new webpack.NamedModulesPlugin(),
     new webpack.HotModuleReplacementPlugin(),
   ],
+  
   resolve: {
     modules: [
       path.resolve('./client'),

@@ -1,14 +1,21 @@
-# App artifacts
-/_build
-/db
-/deps
-/*.ez
+# The directory Mix will write compiled artifacts to.
+/_build/
+
+/cover/
+/deps/
+/doc/
+/.fetch
 
 # Generate on crash by the VM
 erl_crash.dump
 
+*.ez
+
+listn2this-*.tar
+
 # Static artifacts
-/node_modules
+/assets/node_modules/
+/node_modules/
 
 # Since we are building assets from web/static,
 # we ignore priv/static. You may want to comment

@@ -2,7 +2,11 @@ import React, { Component } from 'react'
 import styled from 'styled-components'
 import ReactPlayer from 'react-player'
 
+import { gql } from 'apollo-boost'
+import { Query } from 'react-apollo'
+
 import Header from 'components/Header'
+import TracksList from 'components/Test'
 
 const PlayerContainer = styled.div`display: none;`
 const Container = styled.div`display: block;`
@@ -12,7 +16,7 @@ export default class Root extends Component {
   state = {
     player: {
       volume: 0.8,
-      muted: false,
+      muted: true,
       playing: false,
       url: "",
       duration: 0,
@@ -29,7 +33,7 @@ export default class Root extends Component {
 
     return (
       <Container>
-        <Header playerState={player} changeUrl={} seek={onSeek} />
+        <Header playerState={player} changeUrl={this.changeUrl} seek={this.onSeek} />
 
         <PlayerContainer>
           <ReactPlayer
@@ -42,6 +46,8 @@ export default class Root extends Component {
             onDuration={this.onDuration}
             onProgress={this.onProgress} />
         </PlayerContainer>
+
+        <TracksList />
       </Container>
     )
   }

@@ -14,6 +14,7 @@ config :listen, ListenWeb.Endpoint,
   watchers: [
     yarn: ["dev"]
   ]
+  # watchers: [{Path.expand("webpack.dev.js"), []}]
 
 # ## SSL Support
 #
