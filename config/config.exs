@@ -3,35 +3,29 @@
 #
 # This configuration file is loaded before any dependency and
 # is restricted to this project.
+
+# General application configuration
 use Mix.Config
 
-config :listen,
-  ecto_repos: [Listen.Repo]
+config :listn2this,
+  namespace: Listn,
+  ecto_repos: [Listn.Repo]
 
 # Configures the endpoint
-config :listen, ListenWeb.Endpoint,
+config :listn2this, ListnWeb.Endpoint,
   url: [host: "localhost"],
-  root: Path.dirname(__DIR__),
-  secret_key_base: "Nh9f8oUA++Us/1fQ1bS5XG8pCxI0H63C21UvnBgEvkT8qgaLVEZaen5ocoCYZcrI",
-  render_errors: [view: ListenWeb.ErrorView, accepts: ~w(html json)],
-  pubsub: [name: Listen.PubSub,
-           adapter: Phoenix.PubSub.PG2]
+  secret_key_base: "tVlHBE+1B50YuXYC8rL+JwXmYKp/1Xnt8wa4CFNCPrslW+Fxckf8xY67QhtLq9gA",
+  render_errors: [view: ListnWeb.ErrorView, accepts: ~w(html json)],
+  pubsub: [name: Listn.PubSub, adapter: Phoenix.PubSub.PG2]
 
 # Configures Elixir's Logger
 config :logger, :console,
   format: "$time $metadata[$level] $message\n",
   metadata: [:request_id]
 
-# Ueberauth Configuration
-config :ueberauth, Ueberauth,
-  providers: [
-    twitter: {Ueberauth.Strategy.Twitter, []}
-  ]
-
-config :ueberauth, Ueberauth.Strategy.Twitter.OAuth,
-  consumer_key: System.get_env("TWITTER_CONSUMER_KEY"),
-  consumer_secret: System.get_env("TWITTER_CONSUMER_SECRET")
+# Use Jason for JSON parsing in Phoenix
+config :phoenix, :json_library, Jason
 
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
-import_config "#{Mix.env}.exs"
+import_config "#{Mix.env()}.exs"
