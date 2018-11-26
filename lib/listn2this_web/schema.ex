@@ -2,6 +2,8 @@ defmodule ListnWeb.Schema do
   use Absinthe.Schema
   use ApolloTracing
 
+  # TODO: At some point, may want to separate these into own modules... for organization.
+
   @desc "Provider object"
   object :provider do
     field :id, non_null(:id)
@@ -13,6 +15,8 @@ defmodule ListnWeb.Schema do
   object :user do
     field :id, non_null(:id)
     field :username, non_null(:string)
+    # TODO: resolve these fields
+    # field :tracks, list_of(:track)
   end
 
   @desc "Track object"
