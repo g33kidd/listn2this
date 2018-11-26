@@ -3,6 +3,7 @@ import React from "react";
 
 import { render } from "react-dom";
 
-const Application = () => <h1>This is my application.</h1>;
+import Application from "./Application";
 
+// Render the application and inject global styles.
 render(<Application />, document.getElementById("app"));
