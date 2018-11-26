@@ -1,3 +1,13 @@
 import React, { Component } from "react";
 
-class Application extends Component {}
+const Root = () => <h1>I Am Root.</h1>;
+
+class Application extends Component {
+  render() {
+    return (
+      <ApolloProvider>
+        <Root />
+      </ApolloProvider>
+    );
+  }
+}
