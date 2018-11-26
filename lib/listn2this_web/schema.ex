@@ -3,6 +3,7 @@ defmodule ListnWeb.Schema do
   use ApolloTracing
 
   # TODO: At some point, may want to separate these into own modules... for organization.
+  # TODO: Look into Dataloader?
 
   @desc "Provider object"
   object :provider do
